@@ -14,4 +14,4 @@ RUN npm run build
 VOLUME /pb_data
 EXPOSE 8090
 
-ENTRYPOINT ["/app/pocketbase", "serve"]
+ENTRYPOINT ["/app/pocketbase", "serve", "--http=0.0.0.0:$PORT"]
