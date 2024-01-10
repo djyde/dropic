@@ -5,7 +5,7 @@ import { pb } from "../pb";
 import React from "react";
 
 export function SignInPage() {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const [searchParams] = useSearchParams();
 
   const emailInputRef = React.useRef<HTMLInputElement>(null)
   const passwordInputRef = React.useRef<HTMLInputElement>(null)
@@ -17,7 +17,7 @@ export function SignInPage() {
     }) => {
       return await pb.admins.authWithPassword(variables.email, variables.password)
     },
-    onSuccess(result) {
+    onSuccess() {
       location.href = searchParams.get("redirect") || "/"
     },
   })

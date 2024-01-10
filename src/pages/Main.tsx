@@ -1,7 +1,7 @@
-import React, { useEffect, useSyncExternalStore } from 'react'
+import { useEffect } from 'react'
 import { pb } from '../pb'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { Button, Card, CardBody, CardFooter, CardHeader, Image, Link } from '@nextui-org/react'
+import { Button, Image } from '@nextui-org/react'
 import { AiOutlineCopy, AiOutlineUpload } from 'react-icons/ai'
 import { queryClient } from '../queryClient'
 
@@ -62,9 +62,7 @@ function FileList() {
   )
 }
 
-function UploadButton(props: {
-  // onUploadSuccess: (result: any) => void
-}) {
+function UploadButton() {
   const uploadFileMutation = useMutation({
     mutationKey: ['uploadFile'],
     mutationFn: async (file: File) => {
