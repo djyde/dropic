@@ -1,6 +1,0 @@
-{
-	"dependencies": {
-		"@tanstack/react-query": "^5.17.9",
-		"pocketbase": "^0.20.1"
-	}
-}
